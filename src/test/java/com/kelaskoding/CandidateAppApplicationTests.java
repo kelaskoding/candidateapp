@@ -1,4 +1,4 @@
-package com.kelaskoding.CandidateApp;
+package com.kelaskoding;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
