@@ -38,7 +38,7 @@ public class Candidate implements Serializable{
     @Column(length = 150)
     private String position;
     @Column(length = 1000000)
-    private String curriculumVitae;
+    private String photo;
     
     public Candidate(){
         
@@ -129,18 +129,20 @@ public class Candidate implements Serializable{
     }
 
     /**
-     * @return the curriculumVitae
+     * @return the photo
      */
-    public String getCurriculumVitae() {
-        return curriculumVitae;
+    public String getPhoto() {
+        return photo;
     }
 
     /**
-     * @param curriculumVitae the curriculumVitae to set
+     * @param photo the photo to set
      */
-    public void setCurriculumVitae(String curriculumVitae) {
-        this.curriculumVitae = curriculumVitae;
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
+
+   
     
     
     
