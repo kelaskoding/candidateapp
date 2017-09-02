@@ -34,4 +34,9 @@ public class CandidateService {
     public List<Candidate> findAll(){
         return repo.findAllCandidate();
     }
+    
+    public boolean delete(String id){
+        repo.delete(id);
+        return true;
+    }
 }

@@ -35,9 +35,14 @@ public class CandidateController {
     public Candidate findById(@PathVariable String id) {
         return service.findById(id);
     }
-    
+
+    @RequestMapping(method = RequestMethod.DELETE, value = "/{id}")
+    public boolean deleteById(@PathVariable String id) {
+        return service.delete(id);
+    }
+
     @RequestMapping(method = RequestMethod.GET)
-    public List<Candidate> findAll(){
+    public List<Candidate> findAll() {
         return service.findAll();
     }
 
