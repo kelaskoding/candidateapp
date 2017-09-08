@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.kelaskoding;
+package com.kelaskoding.controller;
 
+import com.kelaskoding.dto.SearchData;
 import com.kelaskoding.entity.Candidate;
 import com.kelaskoding.services.CandidateService;
 import java.util.List;
@@ -22,28 +23,33 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/candidate")
 public class CandidateController {
-
+    
     @Autowired
     private CandidateService service;
-
+    
     @RequestMapping(method = RequestMethod.POST)
     public Candidate insert(@RequestBody Candidate candidate) {
         return service.insert(candidate);
     }
-
+    
     @RequestMapping(method = RequestMethod.GET, value = "/{id}")
     public Candidate findById(@PathVariable String id) {
         return service.findById(id);
     }
-
+    
     @RequestMapping(method = RequestMethod.DELETE, value = "/{id}")
     public boolean deleteById(@PathVariable String id) {
         return service.delete(id);
     }
-
+    
     @RequestMapping(method = RequestMethod.GET)
     public List<Candidate> findAll() {
         return service.findAll();
     }
-
+    
+    @RequestMapping(method = RequestMethod.POST, value = "/search")
+    public List<Candidate> findByName(@RequestBody SearchData searchData) {
+        return service.findByName(searchData.getSearchKey());
+    }
+    
 }

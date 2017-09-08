@@ -30,12 +30,16 @@ public class CandidateService {
     public Candidate findById(String id) {
         return repo.findOne(id);
     }
-    
-    public List<Candidate> findAll(){
+
+    public List<Candidate> findAll() {
         return repo.findAllCandidate();
     }
-    
-    public boolean delete(String id){
+
+    public List<Candidate> findByName(String name) {
+        return repo.findByName("%" + name + "%");
+    }
+
+    public boolean delete(String id) {
         repo.delete(id);
         return true;
     }
