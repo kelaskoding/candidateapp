@@ -20,7 +20,7 @@ public interface CandidateRepo extends PagingAndSortingRepository<Candidate, Str
     @Query("SELECT c FROM Candidate c")
     public List<Candidate> findAllCandidate();
     
-    @Query("SELECT c FROM Candidate c WHERE LOWER(c.fullName) = LOWER(:name)")
+    @Query("SELECT c FROM Candidate c WHERE LOWER(c.fullName) LIKE LOWER(:name)")
     public List<Candidate> findByName(@Param("name") String name);
     
 }
