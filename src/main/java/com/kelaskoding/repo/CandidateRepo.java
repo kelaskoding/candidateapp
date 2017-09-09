@@ -8,14 +8,14 @@ package com.kelaskoding.repo;
 import com.kelaskoding.entity.Candidate;
 import java.util.List;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
 /**
  *
  * @author Hendro Steven
  */
-public interface CandidateRepo extends PagingAndSortingRepository<Candidate, String>{
+public interface CandidateRepo extends CrudRepository<Candidate, String>{
     
     @Query("SELECT c FROM Candidate c")
     public List<Candidate> findAllCandidate();
